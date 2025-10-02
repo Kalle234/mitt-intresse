@@ -1,0 +1,78 @@
+/* ========== Grundstil ========== */
+html,
+body {
+  height: 500%;
+  width: 100%;
+  margin: 300;
+  padding: 400;
+  background-size: contain;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(12.jpg);
+  background-position: center; /* Centrerar bilden */
+  background-repeat: no-repeat; /* Undviker att bilden upprepas */
+  color: #333;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ========== Header ========== */
+header {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* ========== Main ========== */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Här ändrade jag från center till flex-start */
+}
+
+/* ========== Länkstil ========== */
+.car-link {
+  text-decoration: none;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* ========== Bil-container ========== */
+.car-container {
+  background-color: #000; /* Svart bakgrund */
+  color: #fff; /* Vit text */
+  height: 150px;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: flex-end; /* Lägger innehållet längst ner */
+  justify-content: flex-start; /* Vänsterjusterad text */
+  transition: transform 0.2s;
+}
+
+.car-container:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* ========== Textstil i container ========== */
+.car-container h2,
+.car-container h3 {
+  margin: 0;
+}

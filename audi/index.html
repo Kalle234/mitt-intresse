@@ -2,45 +2,66 @@
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audi</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Audi</h1>
-      <p>Föregångare inom teknologi och design</p>
+    <button onclick="goBack()">⬅ Tillbaka</button>
+
+    <script>
+
+      function goBack() {
+        if (history.length > 1) {
+          // Gå tillbaka ett steg i historiken
+          history.back();
+        } else {
+          // Fallback: gå till startsidan
+          window.location.href = "index.html";
+        }
+      }
+    </script>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Audi</h1>
+        <p>Innovation och hållbar prestanda för framtidens mobilitet</p>
+        <a href="index.html" class="back-btn">⬅ Tillbaka</a>
+      </div>
     </header>
 
     <main>
-      <section>
+      <section class="card">
         <h2>Om företaget</h2>
         <ul>
           <li><strong>Grundat:</strong> 1909</li>
           <li><strong>Grundare:</strong> August Horch</li>
           <li><strong>Huvudkontor:</strong> Ingolstadt, Tyskland</li>
-          <li><strong>Bransch:</strong> Bilindustri</li>
-          <li><strong>Produkter:</strong> Personbilar, elbilar, sportbilar</li>
-          <li><strong>Kända modeller:</strong> A3, A4, Q5, Q7, e-tron</li>
+          <li><strong>Bransch:</strong> Personbilar, elbilar, motorsport</li>
+          <li>
+            <strong>Produkter:</strong> Premiumbilar, elfordon, sportbilar
+          </li>
+          <li><strong>Kända modeller:</strong> A3, A4, A6, e-tron, Q5, R8</li>
         </ul>
       </section>
 
-      <section>
+      <section class="card">
         <h2>Historia i korthet</h2>
         <p>
-          Audi grundades 1909 av August Horch. Märket är känt för sin
-          fyrhjulsdrift (quattro) och kombinerar sportighet med avancerad
-          teknik. Audi är en del av Volkswagen-koncernen och har satsat mycket
-          på elbilar under senare år.
+          Audi grundades med fokus på teknisk innovation och kvalitet. Märket
+          har en lång tradition inom motorsport och lyxiga personbilar. Genom
+          åren har Audi blivit känt för avancerad teknik och eleganta
+          designlösningar.
         </p>
       </section>
 
-      <section>
+      <section class="card">
         <h2>Audi idag</h2>
         <p>
-          Idag är Audi en global aktör inom premiumsegmentet, med stark fokus på
-          elektrifiering och digital teknik. Med modeller som e-tron fortsätter
-          de att utveckla hållbara och innovativa fordon för framtiden.
+          Idag är Audi ett globalt premiumvarumärke som satsar på
+          elektrifiering, självkörande teknologi och hållbara
+          mobilitetslösningar. Med e-tron-serien leder Audi utvecklingen av
+          nästa generations elfordon.
         </p>
       </section>
     </main>

@@ -1,0 +1,137 @@
+/* Grundinställningar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #111;
+  color: #fff;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Cars wrapper med grid */
+.cars-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Länk */
+.car-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* Bil-container */
+.car-container {
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover-effekt med skugga och zoom */
+.car-container:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Gradient-overlay för snygg effekt */
+.car-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.3)
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 15px;
+}
+
+.car-container:hover::after {
+  opacity: 1;
+}
+
+/* Animation på load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.car-container {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Specifika bilar */
+.small {
+  background-color: #000;
+  background-image: url("mercedes-logo.jpg");
+}
+
+.wide {
+  background-color: #23211e;
+  background-image: url("Audi-Logo-1995-2009.png");
+}
+
+.car2 {
+  background-color: #67110b;
+  background-image: url("Tesla-Logo.png");
+}
+
+.car3 {
+  background-color: teal;
+  background-image: url("bmw logo.jpg");
+}
+
+/* Responsive text eller overlays om du vill lägga på logonamn */
+.car-container span {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
